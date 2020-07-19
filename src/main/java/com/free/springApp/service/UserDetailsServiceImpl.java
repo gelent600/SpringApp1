@@ -1,6 +1,7 @@
 package com.free.springApp.service;
 
 import com.free.springApp.dao.UserDao;
+import com.free.springApp.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,8 +14,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 
     @Override
-    @Transactional
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+    @Transactional(readOnly = true)
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user=userDao.findUserByUserName(username);
         return null;
     }
 }
