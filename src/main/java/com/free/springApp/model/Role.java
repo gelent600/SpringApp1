@@ -1,6 +1,6 @@
 package com.free.springApp.model;
 
-import javax.annotation.processing.Generated;
+
 import javax.persistence.*;
 import java.util.Set;
 
